@@ -1,0 +1,57 @@
+Algoritme Word
+{
+    Var
+        i,Cword=0,Cvowel=0 : integer
+        ch : String[]
+    Begin 
+        print("write a sentence wich ends with a point")
+        read(ch)
+        for (i=0; i<ch.length; i++)
+        {
+            if (ch[i] == ' ')
+            {  Cword = Cword + 1 }
+            else if (ch[i] = "a" or ch[i] = "e" or ch[i] = "i" or ch[i] = "o" or ch[i] = "u")
+            {  Cvowel = Cvowel + 1 }
+        }
+        
+        print("Number of words",Cword)
+        print("Number of vowels",Cvowel)
+    End
+}
+
+Algoritme Somme
+{
+    Var
+        i,j,Somme=0 : integer
+        found = false : boolean
+        tab1,tab2: Array_of integer[]
+    Begin
+        tab1:={3,1,7,9}
+        tab2:={2, 4, 1, 9, 3}
+        for (i = 0; i < tab1.length; i++) {
+            for (j = 0; j < tab2.length; j++) {
+                if (tab1[i] == tab2[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                Somme += tab1[i];
+            }
+        }
+
+        for (i = 0; i < tab2.length; i++) {
+            for (j = 0; j < tab1.length; j++) {
+                if (tab2[i] == tab1[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                Somme += tab2[i];
+            }
+        }
+        print(Somme)
+
+    End
+}
