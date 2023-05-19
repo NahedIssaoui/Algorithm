@@ -1,0 +1,52 @@
+// Chechpoints 2 : Procedural programming //
+/* First Task */ 
+
+Function dot_product(V1, V2): Integer
+var
+    i, ps=0 : integer
+Begin
+    if Length(V1) <> Length(V2)
+        write("Vectors must have the same length")
+    endif
+    For i = 0 To Length(V1) - 1 Do
+        ps := ps + V1(i) * V2(i)
+    Endfor   
+    return ps
+End
+
+Algorithme orthogonal_vectors
+var
+    i,j,n : integer
+    Mat : Array of Vectors[2][n]
+Begin
+    For i=0 to 1 step 1 do 
+       for j=0 to n-1 step 1 do 
+            if dot_product(Mat[i][j],Mat[i+1][j]) = 0
+                write("Vectors",j,"are orthogonal") 
+            else 
+                write("Vectors",j,"are not orthogonal")
+            endif
+        endfor
+    endfor
+End
+
+
+/* Second Task */
+
+Algorithme insertionSort
+Var
+    i, j, n : integer
+    Tab : Array of integer[]
+Begin
+    n = Length(Tab)
+    for i=1 to n-1 step 1 do 
+        k = Tab[i]
+        j = i-1
+        while j>=0 and Tab[j] > k do
+            Tab[j+1] := Tab[j]
+            j = j-1
+        endwhile
+        Tab[j+1] := k
+    endfor
+End
+
